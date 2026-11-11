@@ -130,31 +130,6 @@ Ardından tarayıcınızda açın:
 
 ---
 
-## GitHub Pages Üzerinden Yayınlama
-
-Bu depo, GitHub Pages'te hem **GitHub Actions** hem de klasik **Branch** yöntemiyle sorunsuz yayınlanacak biçimde hazırlanmıştır (`.nojekyll` ve [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) dahildir).
-
-### 1. GitHub Deposuna Gönderme
-```bash
-git remote add origin https://github.com/MustafaBugraBEKDEMiR/cad-ncz-viewer.git
-git push -u origin main
-```
-
-### 2. Pages Ayarlarını Etkinleştirme
-GitHub deponuzda **Settings → Pages** menüsüne gidin ve **Build and deployment → Source** altından aşağıdaki iki yöntemden birini seçin:
-
-- **Seçenek A — GitHub Actions (Önerilen):**
-  1. **Source** olarak **GitHub Actions** seçin.
-  2. Depodaki [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) iş akışı, `main` dalına yapılan her `push` sonrasında otomatik çalışır ve siteyi yayınlar.
-- **Seçenek B — Doğrudan Daldan Yayın (Branch):**
-  1. **Source** olarak **Deploy from a branch** seçin.
-  2. Dalı **`main`**, klasörü **`/ (root)`** olarak ayarlayıp **Save** butonuna tıklayın.
-  3. Kök dizindeki `.nojekyll` dosyası sayesinde alt dizinler ve modüller doğrudan sunulur.
-
-Yayın tamamlandığında uygulamanız `https://mustafabugrabekdemir.github.io/cad-ncz-viewer/` adresinde çalışacaktır.
-
----
-
 ## Klavye Kısayolları
 
 | Kısayol | İşlev |
