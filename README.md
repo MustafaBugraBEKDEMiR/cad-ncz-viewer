@@ -80,9 +80,6 @@ cad-ncz-viewer/
 ├── LICENSE                         # MIT Lisansı
 ├── .nojekyll                        # GitHub Pages Jekyll işleme devre dışı bayrağı
 ├── .gitignore
-├── .github/
-│   └── workflows/
-│       └── deploy-pages.yml        # GitHub Actions ile otomatik Pages dağıtım iş akışı
 ├── css/
 │   └── style.css                   # Arayüz stilleri (Koyu, Antrasit, Açık temalar + mobil çekmeceler)
 ├── js/
