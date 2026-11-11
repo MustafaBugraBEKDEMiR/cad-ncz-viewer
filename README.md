@@ -6,6 +6,12 @@ Tamamen istemci tarafında (tarayıcı içinde), sunucu yüklemesi veya derleme 
 - **Doğrudan Örnek Bağlantıları:** `?sample=ncz` | `?sample=dxf` | `?sample=ncn`
 - **Kaynak Depo:** https://github.com/MustafaBugraBEKDEMiR/cad-ncz-viewer
 
+<p align="center">
+  <img src="./assets/demo.gif" alt="CAD & NCZ Viewer Demo — Netcad NCZ, DXF, 3D Orbit ve Ölçüm" width="900" />
+</p>
+
+> *Zero-dependency, browser-based Web CAD Viewer, AutoCAD DXF Viewer, and Netcad (`.ncz` / `.nca` / `.ncn`) Viewer.*
+
 ---
 
 ## Özellikler Özeti
@@ -80,6 +86,10 @@ cad-ncz-viewer/
 ├── LICENSE                         # MIT Lisansı
 ├── .nojekyll                        # GitHub Pages Jekyll işleme devre dışı bayrağı
 ├── .gitignore
+├── robots.txt                       # Arama motoru tarama izinleri
+├── sitemap.xml                      # GitHub Pages SEO site haritası
+├── assets/
+│   └── demo.gif                     # README etkileşimli demo animasyonu
 ├── css/
 │   └── style.css                   # Arayüz stilleri (Koyu, Antrasit, Açık temalar + mobil çekmeceler)
 ├── js/

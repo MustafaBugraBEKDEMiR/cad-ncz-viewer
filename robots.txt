@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mustafabugrabekdemir.github.io/cad-ncz-viewer/sitemap.xml
