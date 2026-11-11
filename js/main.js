@@ -1,5 +1,5 @@
 /**
- * GeoCAD View — Main Application Controller
+ * CAD & NCZ Viewer (cad-ncz-viewer) — Main Application Controller
  */
 
 import { EntityType, computeEntityArea, computeEntityLength } from './core/model.js';

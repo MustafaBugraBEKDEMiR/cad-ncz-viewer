@@ -1,5 +1,5 @@
 /**
- * Automated Unit & Integration Test Suite for GeoCAD View (MIT Licensed).
+ * Automated Unit & Integration Test Suite for cad-ncz-viewer (MIT Licensed).
  * Covers: Binary NCZ TLV, ZIP-packaged NCZ (.nca & GML), DXF (BLOCKS/INSERT, bulges,
  * ELLIPSE, SPLINE, MTEXT), NCN, GeoJSON, KML, SVG, OBJ, ASCII & Binary STL,
  * Float64 shoelace geometry math, grid spatial index/hitTest/OSNAP, and exporters.
