@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GeoCAD View — Otomatik Test Koşucusu</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 28px;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #0b1220;
+      color: #e2e8f0;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 20px;
+      margin: 0 0 8px;
+      color: #38bdf8;
+    }
+    .summary {
+      padding: 12px 16px;
+      border-radius: 10px;
+      background: #111b2e;
+      border: 1px solid #1e293b;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .summary.pass { border-color: #16a34a; color: #4ade80; }
+    .summary.fail { border-color: #dc2626; color: #f87171; }
+    .list { display: flex; flex-direction: column; gap: 8px; }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      font-size: 13.5px;
+    }
+    .row.pass { border-left: 4px solid #22c55e; }
+    .row.fail { border-left: 4px solid #ef4444; background: #261217; }
+    .err { color: #fca5a5; font-family: Consolas, monospace; font-size: 12px; margin-top: 4px; }
+    .ms { color: #94a3b8; font-family: Consolas, monospace; font-size: 12px; white-space: nowrap; }
+  </style>
+</head>
+<body data-status="RUNNING">
+  <div class="container">
+    <h1>GeoCAD View — Birim ve Entegrasyon Testleri</h1>
+    <div id="summary" class="summary">Testler çalıştırılıyor...</div>
+    <div id="results" class="list"></div>
+  </div>
+  <script type="module">
+    import { runAllTests } from './test-suite.js';
+
+    const summaryEl = document.getElementById('summary');
+    const resultsEl = document.getElementById('results');
+
+    try {
+      const report = await runAllTests();
+      window.__TEST_REPORT__ = report;
+      document.body.dataset.status = report.failed === 0 ? 'PASS' : 'FAIL';
+
+      summaryEl.className = `summary ${report.failed === 0 ? 'pass' : 'fail'}`;
+      summaryEl.textContent = `Sonuç: ${report.passed}/${report.total} test başarılı (${report.failed} başarısız)`;
+
+      for (const r of report.results) {
+        const div = document.createElement('div');
+        div.className = `row ${r.passed ? 'pass' : 'fail'}`;
+        div.innerHTML = `
+          <div>
+            <div>${r.passed ? '✓' : '✕'} ${r.name}</div>
+            ${r.error ? `<div class="err">${r.error}</div>` : ''}
+          </div>
+          <span class="ms">${r.ms} ms</span>
+        `;
+        resultsEl.appendChild(div);
+      }
+    } catch (err) {
+      document.body.dataset.status = 'FAIL';
+      summaryEl.className = 'summary fail';
+      summaryEl.textContent = `Kritik test hatası: ${err.message}`;
+    }
+  </script>
+</body>
+</html>
