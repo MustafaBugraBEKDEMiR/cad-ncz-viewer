@@ -2,6 +2,10 @@
 
 Tamamen istemci tarafında (tarayıcı içinde), sunucu yüklemesi veya derleme (build) adımı gerektirmeden çalışan, sıfır harici bağımlılıklı (Pure Vanilla ES6 Modules + HTML5 Canvas) açık kaynak **CAD, Harita/CBS ve Netcad (`.ncz`)** dosya görüntüleyicisidir. **GitHub Pages** üzerinden doğrudan statik olarak yayınlanacak şekilde tasarlanmıştır.
 
+- **Canlı Demo (GitHub Pages):** https://mustafabugrabekdemir.github.io/cad-ncz-viewer/
+- **Doğrudan Örnek Bağlantıları:** `?sample=ncz` | `?sample=dxf` | `?sample=ncn`
+- **Kaynak Depo:** https://github.com/MustafaBugraBEKDEMiR/cad-ncz-viewer
+
 ---
 
 ## Özellikler Özeti
@@ -130,9 +134,9 @@ Ardından tarayıcınızda açın:
 
 Bu depo, GitHub Pages'te hem **GitHub Actions** hem de klasik **Branch** yöntemiyle sorunsuz yayınlanacak biçimde hazırlanmıştır (`.nojekyll` ve [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) dahildir).
 
-### 1. Mevcut GitHub Deponuza Gönderme
+### 1. GitHub Deposuna Gönderme
 ```bash
-git remote add origin https://github.com/<KULLANICI_ADINIZ>/cad-ncz-viewer.git
+git remote add origin https://github.com/MustafaBugraBEKDEMiR/cad-ncz-viewer.git
 git push -u origin main
 ```
 
@@ -147,7 +151,7 @@ GitHub deponuzda **Settings → Pages** menüsüne gidin ve **Build and deployme
   2. Dalı **`main`**, klasörü **`/ (root)`** olarak ayarlayıp **Save** butonuna tıklayın.
   3. Kök dizindeki `.nojekyll` dosyası sayesinde alt dizinler ve modüller doğrudan sunulur.
 
-Yayın tamamlandığında uygulamanız `https://<KULLANICI_ADINIZ>.github.io/cad-ncz-viewer/` adresinde çalışacaktır.
+Yayın tamamlandığında uygulamanız `https://mustafabugrabekdemir.github.io/cad-ncz-viewer/` adresinde çalışacaktır.
 
 ---
 
